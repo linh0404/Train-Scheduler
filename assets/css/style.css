@@ -18,3 +18,13 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+body, 
+th,
+tr {
+  color: white;
+}
+
+.card {
+  background-color: rgba(0,0,0,0.8);
+}
