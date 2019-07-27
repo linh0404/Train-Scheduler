@@ -19,7 +19,69 @@
     <body>
          <!-- Link to Moment.js should go here -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  
+        <div class="container">
+            <div class="jumbotron">
+              <h1 class="“display-4”">METRO TRAIN SCHEDULE</h1>
+              <p class="“lead”">
+                MOVING YOU AROUND MELBOURNE
+              </p>
+            </div>
+        </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">Current Train Schedule</div>
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Train Name</th>
+                      <th scope="col">Destination</th>
+                      <th scope="col">Frequency (min)</th>
+                      <th scope="col">Next Arrival</th>
+                      <th scope="col">Minutes Away</th>
+                    </tr>
+                  </thead>
+                  <tbody id="trainlist">
+                    <tr>
+                      <th scope="row">Trenton Express</th>
+                      <td>Trenton</td>
+                      <td>25</td>
+                      <td>5:35PM</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">Add Train</div>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="trainName">Train Name</label>
+                    <input type="trainName" class="form-control" id="name-input" aria-describedby="emailHelp" placeholder="Train Name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="destination" class="form-control" id="role-input" placeholder="Destination" />
+                  </div>
+                  <div class="form-group">
+                    <label for="firstTime">First Train Time</label>
+                    <input type="firstTime" class="form-control" id="startDate-input" placeholder="First Train Time" />
+                  </div>
+                  <div class="form-group">
+                    <label for="frequency">Frequency (min)</label>
+                    <input type="frequency" class="form-control" id="monthlyrate-input" placeholder="Frequency" />
+                  </div>
+                  <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        
  
         <!-- javascript -->
         <script src="assets/javascript/app.js"></script>
