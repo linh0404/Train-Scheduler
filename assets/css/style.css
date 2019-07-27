@@ -1,0 +1,20 @@
+body {
+    background: url(https://developers.giphy.com/branch/master/static/api-c99e353f761d318322c853c03ebcf21b.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+    text-align: center;
+}
+
+#gifs-appear-here {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
