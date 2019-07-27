@@ -28,3 +28,7 @@ tr {
 .card {
   background-color: rgba(0,0,0,0.8);
 }
+
+.card-header {
+  font-weight: bold;
+}
