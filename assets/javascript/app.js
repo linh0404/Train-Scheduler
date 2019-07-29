@@ -25,36 +25,39 @@ var frequency = "";
 $("#submit").on("click", function(event) {
     event.preventDefault();
 
-// Grabbed values from text boxes
-trainName = $("#name-input").val().trim();
-destination = $("#destination-input").val().trim();
-firstTime = $("#firstTime-input").val().trim();
-frequency = $("#frequency-input").val().trim();
+  // Grabbed values from text boxes
+  trainName = $("#name-input").val().trim();
+  destination = $("#destination-input").val().trim();
+  firstTime = $("#firstTime-input").val().trim();
+  frequency = $("#frequency-input").val().trim();   
 
-database.ref().push({
-    trainName: trainName,
-    destination: destination,
-    firstTime: firstTime,
-    frequency: frequency,
-    dateAdded: firebase.database.ServerValue.TIMESTAMP 
-});
+  database.ref().push({
+      trainName: trainName,
+      destination: destination,
+      firstTime: firstTime,
+      frequency: frequency,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP 
+  });
 });
 
 database.ref().on("child_added", function(childSnapshot) {
-    var sv = childSnapshot.val();
-    console.log(sv.trainName);
-    console.log(sv.destination);
-    console.log(sv.firstTime);
-    console.log(frequency);
+    const sv = childSnapshot.val();
+    const firstTimeConverted = moment(sv.firstTime, "HH:mma");
+
+    const diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    const tRemainder = diffTime % parseInt(sv.frequency, 10);
+    const tMinutesTillTrain = parseInt(sv.frequency, 10) - tRemainder;
+    const nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
     $("#trainlist").append(
         "<tr><td class='trainName'>" + sv.trainName 
         + "</td><td class='destination''>" + sv.destination 
         + "</td><td class='frequency''>" + sv.frequency 
-        + "</td><td class='monthsworked''>" + "nextArrival" 
-        + "</td><td class='totalbilled''>" + "minutesAway" + "</td></tr>"
+        + "</td><td class='nextArrival''>" + moment(nextTrain).format('HH:mm')
+        + "</td><td class='minutesAway''>" + tMinutesTillTrain + "</td></tr>"
         );
 },
+
 function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
