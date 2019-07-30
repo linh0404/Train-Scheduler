@@ -1,13 +1,13 @@
 // Initialise Firebase
 var firebaseConfig = {
-    apiKey: "AIzaSyAIr73tfbcaTERPmTbYZfnWcwemF5Hm7IM",
-    authDomain: "project1-c7e8d-68c8d.firebaseapp.com",
-    databaseURL: "https://project1-c7e8d-68c8d.firebaseio.com",
-    projectId: "project1-c7e8d",
-    storageBucket: "",
-    messagingSenderId: "1028263948344",
-    appId: "1:1028263948344:web:c3cc8b011a46c270"
-  };
+  apiKey: "AIzaSyAYs_aFFSeF7yZh4UhZnadxzz31pk4nKU4",
+  authDomain: "linh-s-awesome-project-1.firebaseapp.com",
+  databaseURL: "https://linh-s-awesome-project-1.firebaseio.com",
+  projectId: "linh-s-awesome-project-1",
+  storageBucket: "linh-s-awesome-project-1.appspot.com",
+  messagingSenderId: "930128857726",
+  appId: "1:930128857726:web:2ed2b1d7d8d94dfd"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
